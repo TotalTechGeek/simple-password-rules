@@ -3,6 +3,23 @@
 
 Have you ever needed to implement password policies for your codebase? This module attempts to simplify that.
 
+```js
+import { password, min, max, hasDigit, hasSpecial } from 'simple-password-rules'
+
+const check = password(
+    min(8),
+    max(16),
+    hasDigit(1),
+    hasSpecial(1)
+)
+
+const errors = check('password1')
+if (errors) {
+    throw new Error(errors) //  The password provided does not contain enough "special" characters. Needs 1 more. 
+}
+```
+
+
 
 ---
 
