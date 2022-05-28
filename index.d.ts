@@ -110,13 +110,16 @@ export function not(rule: (str: string) => string, error: string): (str: any) =>
 /**
    * Parses the string template to make it simple to create templates.
    * "$" is the magic symbol that lets you reference the argument.
+   *
    * Only works with template functions with less than 10 arguments,
    * and doesn't let you traverse (input to the function should be strings).
+   *
+   * It will replace "$0" with the first argument, "$1" with the second, etc.
    *
    * @test 'Hello, $0' ~> 'World' returns 'Hello, World'
    * @test '$0, $1' ~> 'Hello', 'World' returns 'Hello, World'
    * @test 'Hey $0' ~> 'Steve' returns 'Hey Steve'
-   * @test 'Fuzzed: $0' ~> #string returns cat('Fuzzed: ', args.0)
+   * @test 'Fuzz: $0' ~> #string returns cat('Fuzz: ', args.0)
    *
    * @param {string} stringTemplate
    * @returns {(...args: string[]) => string}
