@@ -195,32 +195,20 @@ export function not (rule, error) {
 /**
    * Parses the string template to make it simple to create templates.
    * "$" is the magic symbol that lets you reference the argument.
+   *
    * Only works with template functions with less than 10 arguments,
    * and doesn't let you traverse (input to the function should be strings).
+   *
+   * It will replace "$0" with the first argument, "$1" with the second, etc.
    *
    * @test 'Hello, $0' ~> 'World' returns 'Hello, World'
    * @test '$0, $1' ~> 'Hello', 'World' returns 'Hello, World'
    * @test 'Hey $0' ~> 'Steve' returns 'Hey Steve'
+   * @test 'Fuzz: $0' ~> #string returns cat('Fuzz: ', args.0)
    *
    * @param {string} stringTemplate
    * @returns {(...args: string[]) => string}
    */
 export function template (stringTemplate) {
-  // Simple optimization for the single argument case.
-  if (!/\$[1-9]/.test(stringTemplate)) {
-    /** @param {string} str */
-    return str => stringTemplate.replace(/\$0/g, str)
-  }
-
-  /**
-     * Replaces parts of the string with the arguments.
-     * @param {string[]} args
-     */
-  return (...args) => {
-    let template = stringTemplate
-    for (let i = 0; i < args.length; i++) {
-      template = template.replace(new RegExp(`\\$${i}`, 'g'), args[i])
-    }
-    return template
-  }
+  return (...args) => stringTemplate.replace(/\$\d/g, match => args[+match[1]])
 }

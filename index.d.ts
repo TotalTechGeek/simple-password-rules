@@ -116,6 +116,7 @@ export function not(rule: (str: string) => string, error: string): (str: any) =>
    * @test 'Hello, $0' ~> 'World' returns 'Hello, World'
    * @test '$0, $1' ~> 'Hello', 'World' returns 'Hello, World'
    * @test 'Hey $0' ~> 'Steve' returns 'Hey Steve'
+   * @test 'Fuzzed: $0' ~> #string returns cat('Fuzzed: ', args.0)
    *
    * @param {string} stringTemplate
    * @returns {(...args: string[]) => string}

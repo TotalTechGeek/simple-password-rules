@@ -10,7 +10,6 @@
     "build:default": "rm -rf dist && rollup index.js --config cjs.config.js && rollup index.js --config esm.config.js && echo '{ \"type\": \"module\" }' > dist/esm/package.json && echo '{ \"type\": \"commonjs\" }' > dist/cjs/package.json && cd dist && exitzero standard --fix */*.js && tsc ../index.js --declaration --allowJs --emitDeclarationOnly --target ESNext --moduleResolution node",
     "test": "c8 pineapple -i *.js"
   },
-  "dependencies": {},
   "devDependencies": {
     "c8": "^7.11.3",
     "cross-env": "^7.0.3",
@@ -19,7 +18,7 @@
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-promise": "^4.2.1",
     "exitzero": "^1.0.1",
-    "pineapple": "^0.7.1",
+    "pineapple": "^0.9.0",
     "rollup": "^2.58.3",
     "run-script-os": "^1.1.6",
     "standard": "^16.0.4",
