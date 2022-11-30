@@ -3,7 +3,7 @@
  * @param {(((str: string) => string | undefined))[]} rules
  * @returns A string if there is an error, undefined otherwise.
  */
-export function password(...rules: ((str: string) => string | undefined)[]): (str: any) => string;
+export function password(...rules: ((str: string) => string | undefined)[]): (str: string) => string;
 /**
    * @test 3 ~> 'hi' returns truthy
    * @test 3 ~> 'hi hi hi' returns undefined

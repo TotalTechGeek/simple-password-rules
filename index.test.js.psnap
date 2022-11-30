@@ -1,0 +1,18 @@
+{
+  "commonRule('Hello') [536914156da3f41ece04f0872239dc1a3bfad6c73e0be5e0d8eb4b0fe5af4fdb]": {
+    "value": "Must complete 1 of the following:\n- The password provided does not contain enough \"digit\" characters. Needs 1 more.\n- The password provided does not contain enough \"special\" characters. Needs 1 more.",
+    "async": false
+  },
+  "commonRule('Hello World') [df8d926fedbb485eed99bacd4a3bb97501f20ef6107f1d45a2a53da92f97e4d2]": {
+    "value": "Must complete 1 of the following:\n- The password provided does not contain enough \"digit\" characters. Needs 1 more.\n- The password provided does not contain enough \"special\" characters. Needs 1 more.\n\nYou may not have spaces.",
+    "async": false
+  },
+  "commonRule('HelloW0rld!') [e2967628bc2227a6711add9ef71ffc3f2df940e899ac01b6d67356f8777904a5]": {
+    "value": "",
+    "async": false
+  },
+  "notIncludesFunction(['password01'], 'You failed! You used $0.' ~> 'Jessepassword01') [088af20dd0bb882e7e634bfc76ae789159d3310ed937535b6ad7487e5e149051]": {
+    "value": "You failed! You used password01.",
+    "async": false
+  }
+}

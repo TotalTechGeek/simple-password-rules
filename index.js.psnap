@@ -1,0 +1,22 @@
+{
+  "notIncludes('Kevin', false ~> 'Kevin') [5388c126000378ea08a85f220ed684df75508faf191e70289db45e048e878d54]": {
+    "value": "The password provided contains the prohibited text \"Kevin\".",
+    "async": false
+  },
+  "notIncludes('Kevin', true ~> 'Kevin') [34f80c2dd1223e432682fbbed3d08d191922c68ba6892118d8ab798b5b06ca7c]": {
+    "value": "The password provided contains prohibited text.",
+    "async": false
+  },
+  "notIncludes('Kevin', 'This is a message.' ~> 'Kevin') [3a726d260e8b2985742f443747cd60b42804e83c33a61c1ed61fb1cf1bf8c326]": {
+    "value": "This is a message.",
+    "async": false
+  },
+  "notIncludes(['password01', 'yeet'] ~> 'password01') [3bd13e3d82670eb4de6afe577f3cb3e9e61b23612bafe859a96c3b4835aa665a]": {
+    "value": "The password provided contains the prohibited text \"password01\".",
+    "async": false
+  },
+  "notIncludes(['password01'] ~> 'yeet') [fa3b61665c45c7e15eac7a6f9d75899a47881a3792f4f879ea0d50d7e70ce44d]": {
+    "value": undefined,
+    "async": false
+  }
+}
