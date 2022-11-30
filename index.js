@@ -193,6 +193,10 @@ export function not (rule, error) {
 }
 
 /**
+ * Private Tests:
+ * @test 'Fuzz: $0' ~> #string returns cat('Fuzz: ', args.0)
+ */
+/**
    * Parses the string template to make it simple to create templates.
    * "$" is the magic symbol that lets you reference the argument.
    *
@@ -201,10 +205,10 @@ export function not (rule, error) {
    *
    * It will replace "$0" with the first argument, "$1" with the second, etc.
    *
+   * Some examples -
    * @test 'Hello, $0' ~> 'World' returns 'Hello, World'
    * @test '$0, $1' ~> 'Hello', 'World' returns 'Hello, World'
    * @test 'Hey $0' ~> 'Steve' returns 'Hey Steve'
-   * @test 'Fuzz: $0' ~> #string returns cat('Fuzz: ', args.0)
    *
    * @param {string} stringTemplate
    * @returns {(...args: string[]) => string}
